@@ -1,0 +1,229 @@
+﻿@model RP_Reality_realestate.Models.ContactMail
+
+@{
+    ViewBag.Title = "ContactView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>UpConstruction Bootstrap Template - Contact</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+
+    <link href="~/assets/img/favicon.png" rel="icon" />
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    @*<link href="assets/css/main.css" rel="stylesheet">*@
+    <link href="~/assets/css/main.css" rel="stylesheet" />
+
+    <!-- =======================================================
+    * Template Name: UpConstruction - v1.3.0
+    * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        @*<div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">*@
+        <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../../assets/img/breadcrumbs-bg.jpg'); ">
+            <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+                <h2>Contact</h2>
+                <ol>
+                    <li><a href="@Url.Action("HomePageView", "HomePage")">  Home </a></li>
+                    <li>Contact</li>
+                </ol>
+
+            </div>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+                            <i class="bi bi-map"></i>
+                            <h3>Our Address</h3>
+                            <p>
+                                RP Realty Shop No-89,
+                                Cine Max Kankiya Road Mira Road East
+                            </p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="info-item d-flex flex-column justify-content-center align-items-center">
+                            <i class="bi bi-envelope"></i>
+                            <h3>Email Us</h3>
+                            <p>info@rprealty.in </p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+                            <i class="bi bi-telephone"></i>
+                            <h3>Call Us</h3>
+                            <p>+91 8169862193</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                </div>
+
+                <div class="row gy-4 mt-1">
+
+                    <div class="col-lg-6 ">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                                frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    </div><!-- End Google Maps -->
+
+                    <div class="col-lg-6">
+                        <form>
+                            <div class="row gy-4">
+                                <div class="col-lg-12 form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "Name", placeholder = "Enter your Name" })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-lg-6">
+                                            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", id = "Phone", placeholder = "Phone" })
+                                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 form-group">
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", id = "Email", placeholder = "Enter your Email" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-12 form-group">
+                                    @Html.TextAreaFor(model => model.Msg, new { @class = "form-control", id = "Msg", rows = "6", placeholder = "Enter your Message" })
+                                    @Html.ValidationMessageFor(model => model.Msg, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-12 form-group">
+                                    <div id="loading-spinner" style="display: none;">
+                                        <i class="fa fa-spinner fa-spin"></i> Sending...
+                                    </div>
+                                    <div id="success-message" class="text-success" style="display: none;"></div>
+                                    <div id="error-message" class="text-danger" style="display: none;"></div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <button class="btn btn-primary" id="Register">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <div id="preloader"></div>
+
+    <!-- Include jQuery and validation scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/aos/aos.js"></script>
+    <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+    <script src="~/assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#Register").click(function (e) {
+                e.preventDefault(); // Prevent the default form submission
+                // Disable the button to prevent multiple submissions
+                $("#Register").prop("disabled", true);
+                // Display loading spinner
+                $("#loading-spinner").show();
+                var mEmail = {
+                    Name: $("#Name").val(),
+                    Email: $("#Email").val(),
+                    Phone: $("#Phone").val(),
+                    Msg: $("#Msg").val()
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "/Contact/Register",
+                    data: JSON.stringify(mEmail),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data.success) {
+                            // Hide loading spinner
+                            $("#loading-spinner").hide();
+                            // Show success message
+                            $("#success-message").show().text(data.message);
+                            // Clear form fields
+                            $("#Name").val("");
+                            $("#Email").val("");
+                            $("#Phone").val("");
+                            $("#Msg").val("");
+                        } else {
+                            // Hide loading spinner
+                            $("#loading-spinner").hide();
+                            // Show error message
+                            $("#error-message").show().text("An error occurred: " + data.message);
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error:", error);
+                        // Hide loading spinner
+                        $("#loading-spinner").hide();
+                        // Show error message
+                        $("#error-message").show().text("An error occurred while sending the email.");
+                    },
+                    complete: function () {
+                        // Re-enable the button
+                        $("#Register").prop("disabled", false);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+

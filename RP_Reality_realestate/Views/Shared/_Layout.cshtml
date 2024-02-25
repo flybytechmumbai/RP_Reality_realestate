@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="@Url.Action("HomePageView", "HomePage")" class="logo d-flex align-items-center">
+                @*<img src="~/Logo/RP_Logo.png" />*@
+                <img src="~/Logo/Logo2.png" />
+            </a>
+
+            @*<a href="index.html" class="logo d-flex align-items-center">
+                <img src="~/Logo/RP_Logo.png" />
+            </a>*@
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a>@Html.ActionLink("Home", "HomePageView", "HomePage")</a></li>
+
+                    <li><a>@Html.ActionLink("About", "AboutView", "About")</a></li>
+
+                    <li><a>@Html.ActionLink("Projects", "ProjectsView", "Projects")</a></li>
+
+                    @*<li><a>@Html.ActionLink("Blog", "BlogView", "Blog")</a></li>*@
+
+                    <li><a>@Html.ActionLink("Contact", "ContactView", "Contact")</a></li>
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->    <div>
+        @RenderBody()
+        <hr />
+        <footer id="footer" class="footer">
+
+            <div class="footer-content position-relative">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-info">
+                                <h3>R P Realty</h3>
+                                <p>
+                                    RP Realty Shop No-89,
+                                    Cine Max Kankiya Road Mira Road East<br><br>
+                                    <strong>Phone:</strong> +91 8169862193<br>
+                                    <strong>Email:</strong> info@rprealty.in <br>
+                                </p>
+                                <div class="social-links d-flex mt-3">
+                                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End footer info column-->
+
+                        <div class="col-lg-2 col-md-3 footer-links">
+                            <h4>
+                                <a href="@Url.Action("HomePageView", "HomePage")">Home</a>
+                            </h4>
+                            <ul>
+                                <li><a href="@Url.Action("AboutView", "About")">About us</a></li>
+                                <li><a href="@Url.Action("ContactView", "Contact")">Contact us</a></li>
+
+
+                                <li><a href="#">Terms of service</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div><!-- End footer links column-->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-legal text-center position-relative">
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>R P Realty</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        <!-- All the links in the footer should remain intact. -->
+                        <!-- You can delete the links only if you purchased the pro version. -->
+                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+                        @*Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>*@
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+    @Scripts.Render("~/bundles/modernizr")
+</body>
+</html>
